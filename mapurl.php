@@ -4,7 +4,10 @@ header('Content-Type: text/xml');
 $doc = DOMDocument::loadHTMLFile($_GET['identifier']);
 
 $parameters = address_parameters($doc) + array(
-  'appid' => 'tCa4.fDV34GcXMnIbz5dWxSZWjSWsMXIQSqiVVBFb55nTKX1RFLqYyuM677Jz2vK'
+  'appid' => 'tCa4.fDV34GcXMnIbz5dWxSZWjSWsMXIQSqiVVBFb55nTKX1RFLqYyuM677Jz2vK',
+  'image_width' => '564',
+  'image_height' => '455',
+  'zoom' => '4'
 );
 
 $joined_parameters = array();
