@@ -40,8 +40,11 @@ public static function getOutput() {
   if ($img == 'http://not_real')
     return array();
 
+  $address_parts = array_reverse(array_filter($address_info));
+
   return array(
     'infobar' => array(
+      'summary' => 'Map of ' . implode(', ', $address_parts),
       'blob' => '<img src="' . htmlentities($img, ENT_QUOTES) . '" />'
     )
   );
