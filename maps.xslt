@@ -3,7 +3,14 @@
   <xsl:template match="/">
     <adjunctcontainer>
       <adjunct id="smid:{$smid}" version="1.0">
-        <item rel="media:Thumbnail" resource="{//Result}" /> 
+        <xsl:choose>
+          <xsl:when test="//Result">
+            <item rel="media:Thumbnail" resource="{//Result}" />
+          </xsl:when>
+          <xsl:otherwise>
+            <item rel="media:Thumbnail" resource="http://not_real" />
+          </xsl:otherwise>
+        </xsl:choose>
       </adjunct>
     </adjunctcontainer>
   </xsl:template>

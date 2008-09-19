@@ -69,7 +69,7 @@ public static function getOutput() {
 
   $img = Data::get('smid:' . $smid . '/media:Thumbnail/@resource');
 
-  if (!$img)
+  if ($img == 'http://not_real')
     return array();
 
   /* This is for infobar apps
